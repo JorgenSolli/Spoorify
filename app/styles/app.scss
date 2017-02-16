@@ -1,3 +1,7 @@
+body {
+	overflow-y: scroll;
+}
+
 .card {
 	height: 100%;
 }
@@ -48,6 +52,6 @@ h1, .raleway {
 	margin-bottom: 25px;
 }
 
-.search-field {
+.input-group {
 	margin-bottom: 15px;
 }

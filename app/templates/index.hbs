@@ -3,7 +3,21 @@
 	<h3 class="raleway subtitle">Find new artists... The best way!</h3>
 </div>
 
-{{input class="form-control mr-sm-2 search-field" type="text" value=searchString placeholder="Search for an artist"}}
+
+<div class="input-group">
+  <div class="input-group-btn">
+    <button id="searchType" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Artist
+    </button>
+    <div id="searchTypeList" class="dropdown-menu">
+      <a class="dropdown-item" href="#">Artist</a>
+      <a class="dropdown-item" href="#">Album</a>
+      <a class="dropdown-item" href="#">Playlist</a>
+      <a class="dropdown-item" href="#">Track</a>
+    </div>
+  </div>
+  {{input class="form-control mr-sm-2 search-field" type="text" value=searchString placeholder="Search for an artist"}}
+</div>
 
 <div class="text">
  <h3>Search result for {{searchString}}</h3>
@@ -15,3 +29,4 @@
 		<p style="margin-left: 15px;">No results.. Search for something you moron!</p>
 	</div>
 </div>
+{{partial 'scripts'}}
