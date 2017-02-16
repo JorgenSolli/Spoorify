@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # exploring-ember
 
 This README outlines the details of collaborating on this Ember application.
@@ -50,3 +51,7 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+=======
+# Spoorify
+Playing with Spotify's API and the Ember framework
+>>>>>>> 235aa62400b383cb8d6bbb04315b32f8a51d2fc0
