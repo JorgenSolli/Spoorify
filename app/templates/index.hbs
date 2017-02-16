@@ -1,12 +1,17 @@
-{{input class="form-control mr-sm-2 m-b-md" type="text" value=searchString placeholder="Search for an artist"}}
+<div class="container">
+	<h1>Welcome to Spoorify</h1>
+	<h3 class="raleway subtitle">Find new artists... The best way!</h3>
+</div>
+
+{{input class="form-control mr-sm-2 search-field" type="text" value=searchString placeholder="Search for an artist"}}
 
 <div class="text">
  <h3>Search result for {{searchString}}</h3>
  <hr>
 </div>
 
-<div id="container">
-	<div id="res" class="row">
-		
+<div id="res" class="row">
+	<div class="text">
+		<p style="margin-left: 15px;">No results.. Search for something you moron!</p>
 	</div>
 </div>
