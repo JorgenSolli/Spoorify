@@ -18,37 +18,36 @@ export default Ember.Controller.extend({
 	            },
 	            success: function(data) {
 	            	var searchParam = searchType + 's';
-
 	        		$("#res").html("");
-	        		if (searchType === 'track') {
-		        		$.each(data[searchParam]['items']['album'], function(index, value) {
+	        		if (searchType == 'track') {
+	        			console.log(data);
+
+		        		$.each(data[searchParam]['items'], function(index, value) {
 		        			var artistName = "";
 		        			if (value.name.length) {
 		        				artistName  = value.name;
 		        			}
 
 		        			var artistLink = "";
-		        			if (value.artists.external_urls.spotify.length) {
-			        			artistLink  = value.artists.external_urls.spotify;
+		        			if (value.album.external_urls.spotify.length) {
+			        			artistLink  = value.album.external_urls.spotify;
 		        			}
 
 		        			var artistImage = "";
-		        			if (value.artists.images.length) {
+		        			if (value.album.images.length) {
 			        			artistImage = value.album.images[0].url;
 		        			}
 
-		        			var genres = "";
+		        			var artistsData = "";
 		        			var max = 3;
-		        			var i = 1;
-		        			$.each(value.genres, function(index, genre) {
-		        				if (i < max-1) {
-		        					genres += genre + ", ";
+		        			for (var i = 0; i < value.artists.length; i++) {
+		        				if (value.artists[i+1]) {
+		        					artistsData += value.artists[i].name + ", ";
 		        				} else {
-		        					genres += genre;
+		        					artistsData += value.artists[i].name;
 		        				}
-		        				if (i === max) { return false }
-		        				i ++;
-		        			})
+		        				if (i === max) return false;
+		        			}
 
 		    				var data = 
 							'<div class="card" style="width: 20rem;">' +
@@ -57,8 +56,8 @@ export default Ember.Controller.extend({
 							  '<div class="card-block">' +
 							    '<h4 class="card-title">' + 
 							      artistName + '</h4>' +
-							    '<h6>Genres:</h6>' + 
-							    '<p class="card-text">' + genres + '</p>' +
+							    '<h6>By: ' + artistsData + '</h6>' + 
+							    '<p class="card-text"></p>' +
 							    '<a href="' +
 							       artistLink + 
 							       '" target="_blank" class="text-center btn btn-info btn-spotify">' +
